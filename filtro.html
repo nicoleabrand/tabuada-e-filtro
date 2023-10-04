@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro</title>
+  <script>
+    function texto() {
+      document.getElementById('form').innerHTML = document.getElementById('text').value;
+    }
+
+    function filtragem(){
+      const filtro = document.getElementById("filtro").value.toLowerCase();
+      const nomes = document.getElementsByTagName("li");
+
+      for (const nome of nomes) {
+        if (nome.innerText.toLowerCase().includes(filtro)){
+          nome.style.fontWeight = 'bold';
+        }else{
+          nome.style.fontWeight = 'normal';
+        }
+      }
+    }
+  </script>
+  <style>
+    #form{
+      font-size: 32px;
+      height: 10px;
+    }
+    *{
+        background-color: cornflowerblue;
+        color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="form"></div>
+
+
+  <form>
+    <label for="">Filtro: </label>
+    <input type="text" id="filtro" oninput="filtragem();">
+  </form>
+  <ul>
+    <li>Sofia</li>
+    <li>João</li>
+    <li>Maria</li>
+    <li>Pedro</li>
+    <li>Ana</li>
+    <li>Lucas</li>
+    <li>Clara</li>
+    <li>Matheus</li>
+    <li>Beatriz</li>
+    <li>Miguel</li>
+    <li>Laura</li>
+    <li>André</li>
+  </ul>
+
+</body>
+
+</html>

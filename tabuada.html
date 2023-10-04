@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calcular tabuada</title>
+
+    <style>
+        *{
+            background-color:aquamarine;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #resultado {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+ <h1>Tabuada Automática</h1>
+ <form action="tabuada.html">
+    <label for="">Informe um número que deseja calcular a tabuada:</label>
+    <input type="number" name="campo_num" id="numTabuada" oninput="calcular()">
+ </form>
+
+ <div id="resultado"></div>
+
+ <script>
+    function calcular() {
+        let num = document.getElementById("numTabuada").value;
+        document.getElementById("resultado").innerHTML = '';
+
+        if (num !== '') {
+            for (let c = 1; c <= 10; c++) {
+                document.getElementById("resultado").innerHTML += `<p>${num} x ${c} = ${num * c}</p>`;
+            }
+        }
+    }
+ </script>
+</body>
+</html>
